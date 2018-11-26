@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ぴざたべたい</title>
+        <script type="text/javascript" src ="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type ="text/javascript">
+
+$(function(){
+	     $('a img').hover(function(){
+	        $(this).attr('src', $(this).attr('src').replace('_off', '_on'));
+	          }, function(){
+	             if (!$(this).hasClass('currentPage')) {
+	             $(this).attr('src', $(this).attr('src').replace('_on', '_off'));
+	        }
+	   });
+	});
+
+  $(document).ready(function(){
+    $("li").hover(
+      function () {
+        $(this).append($("<span> ◀</span>"));
+      }, 
+      function () {
+        $(this).find("span:last").remove();
+      }
+    );
+
+  });
+
+
+        </script>
+    </head>
+    <style>
+            ul { margin-left:20px; color:gray; }
+            li { cursor:default; }
+            span { color:black; }
+
+    </style>
+
+
+    <body>
+        <a href="#">
+                <img src="cat_off.png" alt="" border="0" />
+        </a>
+        <ul>
+                <li>ぴざたべたい</li><li>ぼくはぴざ</li>
+                <li>たべたい</li>
+                <li>ぴざっておいしいよね</li>
+              </ul>
+       
+       
+ 
+    </body>
+
+</html>
